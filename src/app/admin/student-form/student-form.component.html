@@ -1,0 +1,30 @@
+<form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" #name="ngModel" [(ngModel)]="studentService.selectedStudent.name" placeholder="Full Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" id="email" name="email" class="form-control" #email="ngModel" [(ngModel)]="studentService.selectedStudent.email" placeholder="Email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" class="form-control" #phone="ngModel" [(ngModel)]="studentService.selectedStudent.phone" placeholder="Phone">
+      </div>
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+  <button class="btn btn-primary">Save</button>
+  <br><br>
+  <!-- <span ng-show="isSuccess">
+      a student successfully inserted. 
+      <a href="/students">Go back to students list</a>
+    </span> -->
+</form>

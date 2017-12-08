@@ -1,0 +1,34 @@
+<div class="text-right">
+  <a href="admin/student/new">
+    <button class="btn btn-success">New student</button>
+  </a>
+</div>
+<br/>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let st of studentList">
+        <th scope="row"> {{ ++$index }}</th>
+        <td>{{ st.name }} </td>
+        <td>{{ st.email }}</td>
+        <td>{{ st.phone }}</td>
+        <td>
+          <a [routerLink]="['/admin/student/', st.$key]">
+            <i class="fa fa-pencil-square-o" aria-hidden="false"></i>
+          </a>
+        </td>
+        <td>
+          <i class="fa fa-trash-o" aria-hidden="true" (click)="delete(st.$key)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
